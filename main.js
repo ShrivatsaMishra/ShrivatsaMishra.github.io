@@ -1,1 +1,1 @@
-window.open("Portfolio/Main/index.html");
+window.open("Pokedex/Main/index.html");
