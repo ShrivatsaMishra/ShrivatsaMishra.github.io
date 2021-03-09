@@ -9,7 +9,7 @@ const spatk = [50, 85, 109, 85, 130, 60, 45, 65, 100, 154];
 const spdef = [50, 75, 85, 105, 75, 100, 65, 110, 100, 90];
 const spd = [90, 85, 100, 78, 110, 81, 55, 30, 100, 130];
 const exp = [1000, 1060, 1060, 1060, 1060, 1250, 1000, 1250, 1060, 1250]
-const color = ["#ffdd00", 'purple', 'orange', 'blue', 'purple', 'aqua', 'brown', 'grey', 'pink', 'purple'];
+const color = ["#ffcc00", 'purple', 'orange', 'blue', 'purple', 'aqua', 'brown', 'grey', 'pink', 'purple'];
 scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffeaaa);
 
