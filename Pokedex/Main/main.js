@@ -1,7 +1,7 @@
 let scene, camera, renderer, controls;
 
 scene = new THREE.Scene();
-scene.background = new THREE.Color(0xffffff);
+scene.background = new THREE.Color(0xaafafa);
 
 camera = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,1,5000);
 camera.rotation.z = Math.PI;
@@ -20,7 +20,7 @@ controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.addEventListener('change', renderer);
 controls.update();
 
-hlight = new THREE.AmbientLight (0xaaaaaa,1.5); 
+hlight = new THREE.AmbientLight (0xffffff,1); 
 scene.add(hlight);
 plane = [];
 
@@ -29,14 +29,15 @@ geometry = new THREE.BoxGeometry(50, 50, 50);
 var material;
 for(var i=0;i<10;i++) {
     
-    material = new THREE.MeshLambertMaterial({ color: 0xffffff });
+    material = new THREE.MeshLambertMaterial({ color: 0xaafafa});
+    material.visible = false;
     var cubeMaterial = [
         new THREE.MeshBasicMaterial( {map: new THREE.TextureLoader().load('photos/'+i+'.jpg'), side:THREE.DoubleSide}),
         material,
         new THREE.MeshBasicMaterial( {map: new THREE.TextureLoader().load('photos/'+i+'.jpg'), side:THREE.DoubleSide}),
-        new THREE.MeshBasicMaterial( {map: new THREE.TextureLoader().load('photos/'+i+'.jpg'), side:THREE.DoubleSide}),
         material,
-        material
+        material,
+        material        
     ]
     material = new THREE.MeshFaceMaterial(cubeMaterial);
     plane[i] = new THREE.Mesh( geometry, material );
@@ -63,8 +64,8 @@ loader.load('../Mic/scene.gltf', function(gltf){
     car.position.set(0, -150, 400);
     scene.add(gltf.scene);
     animate();
-    console.log(mic);
 });
+
 material = new THREE.MeshLambertMaterial({ color: 0xffffff , transparent: true});
 var cubeMaterial = [
     material,
@@ -80,6 +81,12 @@ mic = new THREE.Mesh( geometry, material );
 mic.position.set(0, -100, 400);
 scene.add(mic);
 mic.visible = false;
+
+// material = new THREE.MeshLambertMaterial({ color: 0x00faaa , side:THREE.DoubleSide});
+// geometry = new THREE.BoxGeometry(1500, 1500, 1500);
+// box = new THREE.Mesh( geometry, material );
+// box.position.set(0, -100, 0);
+// scene.add(box);
 
 var srt;
 material = new THREE.MeshLambertMaterial({ color: 0xffffff , transparent: true});
@@ -114,7 +121,7 @@ loader.load( '../three.js-master/examples/fonts/helvetiker_regular.typeface.json
         bevelOffset: 0,
         bevelSegments: 5
     } );
-    material = new THREE.MeshBasicMaterial( {color: 0xff2222} );
+    material = new THREE.MeshBasicMaterial( {color: 0xff4242} );
     text = new THREE.Mesh( geometry, material );
     text.position.set(120, 160, 80)
     text.rotation.y=Math.PI/2;
@@ -131,7 +138,6 @@ loader.load( '../three.js-master/examples/fonts/helvetiker_regular.typeface.json
         bevelOffset: 0,
         bevelSegments: 5
     } );
-    material = new THREE.MeshBasicMaterial( {color: 0x000000} );
     text = new THREE.Mesh( geometry, material );
     text.position.set(120, -190, -180)
     text.rotation.y=Math.PI/2;
