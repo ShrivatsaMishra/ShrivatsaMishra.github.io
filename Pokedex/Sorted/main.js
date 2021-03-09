@@ -9,9 +9,9 @@ const spatk = [50, 85, 109, 85, 130, 60, 45, 65, 100, 154];
 const spdef = [50, 75, 85, 105, 75, 100, 65, 110, 100, 90];
 const spd = [90, 85, 100, 78, 110, 81, 55, 30, 100, 130];
 const exp = [1000, 1060, 1060, 1060, 1060, 1250, 1000, 1250, 1060, 1250]
-const color = ["yellow", 'purple', 'orange', 'blue', 'purple', 'aqua', 'brown', 'grey', 'pink', 'purple'];
+const color = ["#ffdd00", 'purple', 'orange', 'blue', 'purple', 'aqua', 'brown', 'grey', 'pink', 'purple'];
 scene = new THREE.Scene();
-scene.background = new THREE.Color(0x333333);
+scene.background = new THREE.Color(0xffeaaa);
 
 let arr = HP;
 let cur = "HP";
@@ -50,6 +50,7 @@ for(var i=0;i<10;i++) {
 let loader = new THREE.FontLoader();
 var geometry, material;
 var st =[];
+var xp=[];
 var curTxt;
 loader.load( '../three.js-master/examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
     z=95;
@@ -60,7 +61,7 @@ loader.load( '../three.js-master/examples/fonts/helvetiker_regular.typeface.json
         curveSegments: 5,
         bevelEnabled: false
     } );
-    material = new THREE.MeshBasicMaterial( {color: color[i]} );
+    material = new THREE.MeshBasicMaterial( {color: 0x000000} );
     text = new THREE.Mesh( geometry, material );
     text.position.set(-50, z+50, 220);
     text.rotation.y=0;
@@ -98,10 +99,10 @@ loader.load( '../three.js-master/examples/fonts/helvetiker_regular.typeface.json
             bevelEnabled: false
         } );
         material = new THREE.MeshBasicMaterial( {color: color[i]} );
-        st[i] = new THREE.Mesh( geometry, material );
-        st[i].position.set(-50, z, 180);
-        st[i].rotation.y=0;
-        scene.add( st[i] );
+        xp[i] = new THREE.Mesh( geometry, material );
+        xp[i].position.set(-50, z, 180);
+        xp[i].rotation.y=0;
+        scene.add( xp[i] );
         z-=change;
     }
     geometry = new THREE.TextGeometry( cur, {
@@ -111,7 +112,7 @@ loader.load( '../three.js-master/examples/fonts/helvetiker_regular.typeface.json
         curveSegments: 5,
         bevelEnabled: false
     } );
-    material = new THREE.MeshBasicMaterial( {color: color[i]} );
+    material = new THREE.MeshBasicMaterial( {color: 0x000000} );
     curTxt = new THREE.Mesh( geometry, material );
     curTxt.position.set(120, 180, 40+(cur.length*10));
     curTxt.rotation.y=Math.PI/2;
@@ -125,7 +126,7 @@ loader.load( '../three.js-master/examples/fonts/helvetiker_regular.typeface.json
             curveSegments: 5,
             bevelEnabled: false
         } );
-        material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+        material = new THREE.MeshBasicMaterial( {color: 0x000000} );
         text = new THREE.Mesh( geometry, material );
         text.position.set(120, 150, y);
         text.rotation.y=Math.PI/2;
@@ -303,10 +304,10 @@ function set(i) {
     z=100;
     for(var i=0;i<10;i++) {
         scene.remove(graph[i]);
-        geometry = new THREE.BoxGeometry( 10, 10, arr[i]*2 );
+        geometry = new THREE.BoxGeometry( exp[i]/10, 10, arr[i]*2 );
         material = new THREE.MeshBasicMaterial( {color: color[i]} );
         graph[i] = new THREE.Mesh( geometry, material );
-        graph[i].position.set(100, z, y-(arr[i]))
+        graph[i].position.set(200 - exp[i]/10, z, y-(arr[i]))
         scene.add(graph[i]);
         z-=change;
     }
@@ -327,7 +328,21 @@ function set(i) {
             st[i].position.set(120, z, -180);
             st[i].rotation.y=Math.PI/2;
             scene.add( st[i] );
+            scene.remove(xp[i]);
+            geometry = new THREE.TextGeometry( exp[i]+"000", {
+                font: font,
+                size: 10,
+                height: 1,
+                curveSegments: 5,
+                bevelEnabled: false
+            } );
+            material = new THREE.MeshBasicMaterial( {color: color[i]} );
+            xp[i] = new THREE.Mesh( geometry, material );
+            xp[i].position.set(-50, z, 180);
+            xp[i].rotation.y=0;
+            scene.add( xp[i] );
             z-=change;
+                
         }
         scene.remove( curTxt );
         geometry = new THREE.TextGeometry( cur, {
@@ -337,7 +352,7 @@ function set(i) {
             curveSegments: 5,
             bevelEnabled: false
         } );
-        material = new THREE.MeshBasicMaterial( {color: color[i]} );
+        material = new THREE.MeshBasicMaterial( {color: 0x000000} );
         curTxt = new THREE.Mesh( geometry, material );
         curTxt.position.set(120, 180, 40+(cur.length*10));
         curTxt.rotation.y=Math.PI/2;
