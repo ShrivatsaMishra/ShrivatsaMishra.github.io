@@ -213,7 +213,7 @@ recognition.onresult = function(event) {
         talk("Sorting by defence");
         set(2);
     }else if(result.includes("speed")) {
-        talk("Sorting by attack");
+        talk("Sorting by speed");
         set(5);
     }else if(result.includes("hp")) {
         talk("Sorting by HP");
