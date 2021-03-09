@@ -185,7 +185,6 @@ loader.load('../Mic/scene.gltf', function(gltf){
     car.position.set(-200, -150, 400);
     scene.add(gltf.scene);
     animate();
-    console.log(mic);
 });
 cubeMaterial = [
     material,
