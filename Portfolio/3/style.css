@@ -1,0 +1,76 @@
+body {
+    background-color: rgb(0, 0, 0);
+    font-family: "Raleway", Arial, sans-serif;
+    color: rgb(236,235,228);
+}
+
+.Header {
+    width: 100%;
+    padding-top: 20px;
+    /* color: rgb(180, 180, 180); */
+    font-size: 60px;
+    text-align: center;
+}
+
+.rotate {
+    animation: rotation 8s infinite linear;
+}
+  
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.main {
+    padding-top: 100px;
+    width: 100%;
+}
+
+#description {
+    font-size: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    float: left;
+    text-align: justify;
+    width: 65%;
+}
+
+#wrapper {
+    width:20%;
+    padding-right: 5%;
+    float: right;
+}
+
+#logo {
+    width: 100%;
+    float: none;
+}
+
+#back {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top:25px;
+    left: 20px;
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: rgb(236,235,228);
+    border-radius: 12px;
+}
+  
+#mic {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    bottom:25px;
+    left: 20px;
+    padding: 10px 24px;
+    font-size: 20px;
+    background-color: rgb(236,235,228);
+    border-radius: 12px;
+}
+

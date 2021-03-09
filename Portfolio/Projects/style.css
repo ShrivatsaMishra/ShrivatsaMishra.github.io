@@ -1,0 +1,53 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#back {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top:25px;
+  left: 20px;
+  padding: 5px 10px;
+  font-size: 20px;
+  background-color: rgb(236,235,228);
+  border-radius: 12px;
+}
+
+#mic {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  bottom:25px;
+  left: 20px;
+  padding: 10px 24px;
+  font-size: 20px;
+  background-color: rgb(236,235,228);
+  border-radius: 12px;
+}
+
+#hand {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  bottom:25px;
+  right: 20px;
+  padding: 10px 24px;
+  font-size: 20px;
+  background-color: rgb(236,235,228);
+  border-radius: 12px;
+}
+
+#video {
+  position: fixed;
+  top:10px;
+  right:20px;
+  visibility: hidden;
+}
+
+#canvas {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+}

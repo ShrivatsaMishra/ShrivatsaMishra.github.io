@@ -1,0 +1,1 @@
+window.open("Portfolio/Main/index.html");
