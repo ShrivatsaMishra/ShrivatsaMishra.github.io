@@ -41,8 +41,8 @@ for(var i=0;i<10;i++) {
     ]
     material = new THREE.MeshFaceMaterial(cubeMaterial);
     plane[i] = new THREE.Mesh( geometry, material );
-    plane[i].rotation.y = Math.PI+i*Math.PI/5;
-    plane[i].position.set(100-200*Math.cos(i*Math.PI/5), 20,200*Math.sin(i * (Math.PI/5)));
+    plane[i].rotation.y = Math.PI+(i+5)*Math.PI/5;
+    plane[i].position.set(100-200*Math.cos((i+5)*Math.PI/5), 20,200*Math.sin((i+5) * (Math.PI/5)));
     scene.add(plane[i]);
 }
 
