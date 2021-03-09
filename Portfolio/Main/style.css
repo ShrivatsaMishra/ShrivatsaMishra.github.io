@@ -45,9 +45,10 @@ body {
 }
 
 .AboutMe > div {
-    font-size: 15px;
-    margin-left: 15%;
-    padding: 70px;
+    font-size: 25px;
+    width: 70%;
+    padding-left: 15%;
+    padding: 20px;
     margin-left: 100px;
     text-align: center;
     
@@ -66,6 +67,7 @@ body {
 
 #photo {
     padding-left: 5%;
+    padding-right: 5%;
     /* border: 1px solid rgb(241,81,86); */
     float: left;
 }
