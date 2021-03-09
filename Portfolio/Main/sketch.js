@@ -11,6 +11,7 @@ function setup() {
   textAlign(LEFT, CENTER);
   x = windowWidth/2;
 }
+
 function draw() {
   background(30);
   fill(236,235,228);
@@ -82,6 +83,15 @@ mic.addEventListener('mouseout', e=> {
   mic.style.bottom = "25px";
   mic.style.left = "20px";
   mic.style.borderColor = "rgb(236,235,228)";
+})
+
+project.addEventListener('mouseover', e=> {
+  project.style.fontSize = "25px";
+  project.style.borderColor = "rgb(236,135,128)";
+})
+project.addEventListener('mouseout', e=> {
+  project.style.fontSize = "20px";
+  project.style.borderColor = "rgb(236,235,228)";
 })
 
 const speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;

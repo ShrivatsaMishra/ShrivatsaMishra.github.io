@@ -21,7 +21,8 @@ body {
     left: 20px;
     padding: 10px 24px;
     font-size: 20px;
-    background-color: rgb(236,235,228);
+    background-color: transparent;
+    color: rgb(236,235,228);
     border-radius: 12px;
 }
 
@@ -38,24 +39,35 @@ body {
 }
 
 .AboutMe {
-    padding-top: 500px;
+    margin-top: 400px;
+    padding-top: 5%;
     color: rgb(236,235,228);
     width: 100%;
+    padding-bottom: 5%;
     /* color: rgb(180, 180, 180); */
 }
 
 .AboutMe > div {
+    float: right;
     font-size: 25px;
-    width: 70%;
-    padding-left: 15%;
-    padding: 20px;
+    width: 60%;
+    padding-right: 5%;
     margin-left: 100px;
     text-align: center;
     
 }
 
+#photo {
+    padding-left: 5%;
+    padding-bottom: 5%;
+    /* border: 1px solid rgb(241,81,86); */
+    width: 20%;
+    float: left;
+}
+
 .Projects {
     float: left;
+    background-color: rgb(30, 30, 30);
     padding-top: 5%;
     padding-bottom: 5%;
     color: rgb(236,235,228);
@@ -63,13 +75,6 @@ body {
     /* color: rgb(180, 180, 180); */
     font-size: 20px;
     text-align: center;
-}
-
-#photo {
-    padding-left: 5%;
-    padding-right: 5%;
-    /* border: 1px solid rgb(241,81,86); */
-    float: left;
 }
 
 #something {

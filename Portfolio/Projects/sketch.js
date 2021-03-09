@@ -159,12 +159,12 @@ function draw() {
     }else {
       boxes[i] = rect(x+change*i, y-40, change*0.9, size, 40);
     }
-    fill(28,28,28);
+    fill(30,30,30);
     text(Projects[i], x + change*i, y-40);
   }
   fill(236,235,228);
   textSize(64);
-  text('Projects', windowWidth/2, 80);
+  text('Projects', windowWidth/2, 60);
   if (x > -change*10 + windowWidth + 400) {
     image(img,windowWidth*(1-(1/12+1/80)), windowHeight*(1/3), windowWidth/12, windowHeight/2);
     if(mouseX>=5*windowWidth/6) {

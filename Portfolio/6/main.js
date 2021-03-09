@@ -1,7 +1,6 @@
 var img = document.querySelector("#logo");
 
 img.onmouseover = function() {
-    img.style.transform = "rotate(7deg)";
     img.classList.add('rotate');
 }
 
@@ -28,11 +27,13 @@ mic.addEventListener('mouseover', e=> {
     mic.style.fontSize = "25px";
     mic.style.bottom = "20px";
     mic.style.left = "15px";
+    mic.style.borderColor = "rgb(236,135,128)";
 })
 mic.addEventListener('mouseout', e=> {
     mic.style.fontSize = "20px";
     mic.style.bottom = "25px";
     mic.style.left = "20px";
+    mic.style.borderColor = "rgb(236,235,228)";
 })
 
 const speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;

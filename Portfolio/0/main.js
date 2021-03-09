@@ -1,7 +1,6 @@
 var img = document.querySelector("#logo");
 
 img.onmouseover = function() {
-    img.style.transform = "rotate(7deg)";
     img.classList.add('rotate');
 }
 
