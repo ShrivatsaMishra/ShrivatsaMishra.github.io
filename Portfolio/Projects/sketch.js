@@ -83,6 +83,8 @@ function preload() {
   for(var i=0;i<10;i++) {
     images[i] = loadImage('../Photos/'+photo_name[i]);
   }
+  img = loadImage("../Photos/arrow.png");
+  img1 = loadImage("../Photos/arrow1.png");
 }
 
 function setup() {
@@ -163,6 +165,18 @@ function draw() {
   fill(236,235,228);
   textSize(64);
   text('Projects', windowWidth/2, 80);
+  if (x > -change*10 + windowWidth + 400) {
+    image(img,windowWidth*(1-(1/12+1/80)), windowHeight*(1/3), windowWidth/12, windowHeight/2);
+    if(mouseX>=5*windowWidth/6) {
+      x-=10;
+    }
+  }
+  if (x < windowHeight/2-100) {
+    image(img1,windowWidth/80, windowHeight/3, windowWidth/12, windowHeight/2);
+    if(mouseX<=windowWidth/6) {
+      x+=10;
+    }
+  }
 }
 
 const speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;

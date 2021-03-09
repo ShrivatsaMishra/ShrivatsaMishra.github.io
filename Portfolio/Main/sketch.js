@@ -2,13 +2,14 @@ var x;
 var rad = 0;
 var mic = document.querySelector("#mic");
 var project = document.querySelector("#projects");
+var img;
 
 function setup() {
   var c = createCanvas(windowWidth, 500);
   c.parent("something");
   c;  
   textAlign(LEFT, CENTER);
-  x = windowWidth/2
+  x = windowWidth/2;
 }
 function draw() {
   background(30);
