@@ -1,7 +1,7 @@
 let scene, camera, renderer, controls;
 
 scene = new THREE.Scene();
-scene.background = new THREE.Color(0xaafafa);
+scene.background = new THREE.Color(0xffeaaa);
 
 camera = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,1,5000);
 camera.rotation.z = Math.PI;
@@ -48,12 +48,11 @@ for(var i=0;i<10;i++) {
 
 
 loader = new THREE.GLTFLoader();
-loader.load('pokedex/scene.gltf', function(gltf){
+loader.load('Pokeball/scene.gltf', function(gltf){
     dex = gltf.scene.children[0];
-    dex.scale.set(0.75, 0.75, 0.75);
-    dex.position.set(0, -100, 100);
-    dex.rotation.y = Math.PI/2;
-    dex.rotation.x = Math.PI/9;
+    dex.scale.set(120, 120, 120);
+    dex.position.set(100, -40, 0);
+    dex.rotation.z = Math.PI/2;
     scene.add(gltf.scene);
     animate();
 });
@@ -121,7 +120,7 @@ loader.load( '../three.js-master/examples/fonts/helvetiker_regular.typeface.json
         bevelOffset: 0,
         bevelSegments: 5
     } );
-    material = new THREE.MeshBasicMaterial( {color: 0xff4242} );
+    material = new THREE.MeshBasicMaterial( {color: 0x000000} );
     text = new THREE.Mesh( geometry, material );
     text.position.set(120, 160, 80)
     text.rotation.y=Math.PI/2;
@@ -132,11 +131,7 @@ loader.load( '../three.js-master/examples/fonts/helvetiker_regular.typeface.json
         size: 20,
         height: 1,
         curveSegments: 5,
-        bevelEnabled: true,
-        bevelThickness: 1,
-        bevelSize: 1,
-        bevelOffset: 0,
-        bevelSegments: 5
+        bevelEnabled: false
     } );
     text = new THREE.Mesh( geometry, material );
     text.position.set(120, -190, -180)
