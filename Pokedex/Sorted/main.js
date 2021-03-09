@@ -8,7 +8,8 @@ const def = [40, 77, 78, 100, 60, 79, 70, 65, 100, 90];
 const spatk = [50, 85, 109, 85, 130, 60, 45, 65, 100, 154];
 const spdef = [50, 75, 85, 105, 75, 100, 65, 110, 100, 90];
 const spd = [90, 85, 100, 78, 110, 81, 55, 30, 100, 130];
-const color = ["yellow", 'purple', 'orange', 'blue', 'purple', 'aqua', 'brown', 'grey', 'pink', 'pink'];
+const exp = [1000, 1060, 1060, 1060, 1060, 1250, 1000, 1250, 1060, 1250]
+const color = ["yellow", 'purple', 'orange', 'blue', 'purple', 'aqua', 'brown', 'grey', 'pink', 'purple'];
 scene = new THREE.Scene();
 scene.background = new THREE.Color(0x333333);
 
@@ -38,10 +39,10 @@ var change = 30;
 
 var graph = [];
 for(var i=0;i<10;i++) {
-    geometry = new THREE.BoxGeometry( 10, 10, arr[i]*2 );
+    geometry = new THREE.BoxGeometry( exp[i]/10, 10, arr[i]*2 );
     material = new THREE.MeshBasicMaterial( {color: color[i]} );
     graph[i] = new THREE.Mesh( geometry, material );
-    graph[i].position.set(100, z, y-(arr[i]))
+    graph[i].position.set(200 - exp[i]/10, z, y-(arr[i]))
     scene.add(graph[i]);
     z-=change;
 }
@@ -52,6 +53,18 @@ var st =[];
 var curTxt;
 loader.load( '../three.js-master/examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
     z=95;
+    geometry = new THREE.TextGeometry( "EXP to Level Up", {
+        font: font,
+        size: 12,
+        height: 1,
+        curveSegments: 5,
+        bevelEnabled: false
+    } );
+    material = new THREE.MeshBasicMaterial( {color: color[i]} );
+    text = new THREE.Mesh( geometry, material );
+    text.position.set(-50, z+50, 220);
+    text.rotation.y=0;
+    scene.add( text );
     for(var i=0;i<10;i++) {
         geometry = new THREE.TextGeometry( pokemon[i], {
             font: font,
@@ -76,6 +89,18 @@ loader.load( '../three.js-master/examples/fonts/helvetiker_regular.typeface.json
         st[i] = new THREE.Mesh( geometry, material );
         st[i].position.set(120, z, -180);
         st[i].rotation.y=Math.PI/2;
+        scene.add( st[i] );
+        geometry = new THREE.TextGeometry( exp[i]+"000", {
+            font: font,
+            size: 10,
+            height: 1,
+            curveSegments: 5,
+            bevelEnabled: false
+        } );
+        material = new THREE.MeshBasicMaterial( {color: color[i]} );
+        st[i] = new THREE.Mesh( geometry, material );
+        st[i].position.set(-50, z, 180);
+        st[i].rotation.y=0;
         scene.add( st[i] );
         z-=change;
     }
@@ -156,7 +181,7 @@ var mic;
 loader.load('../Mic/scene.gltf', function(gltf){
     car = gltf.scene.children[0];
     car.scale.set(0.05, 0.05, 0.05);
-    car.position.set(0, -150, 400);
+    car.position.set(-200, -150, 400);
     scene.add(gltf.scene);
     animate();
     console.log(mic);
@@ -172,7 +197,7 @@ cubeMaterial = [
 material = new THREE.MeshFaceMaterial(cubeMaterial);
 geometry = new THREE.BoxGeometry(50, 100, 50);
 mic = new THREE.Mesh( geometry, material );
-mic.position.set(0, -100, 400);
+mic.position.set(-200, -100, 400);
 scene.add(mic);
 mic.visible = false;
 
