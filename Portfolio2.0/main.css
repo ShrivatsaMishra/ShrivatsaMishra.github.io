@@ -9,28 +9,45 @@ p {font-size: 16px;}
 .margin {margin-bottom: 45px;}
 
 .bg-1 { 
-    background-color: #CE4257; /* Green */
-    color: #ffffff;
+    background-color: #720026; /* Green */
+    color: #FFE8D1;
 }
 
 .bg-2 { 
-    background-color: #720026; /* Dark Blue */
-    color: #ffffff;
+    background-color: #CE4257; /* Dark Blue */
+    color: #FFE8D1;
 }
 
 .bg-3 { 
-    background-color: #ffffff; /* White */
+    background-color: #FFE8D1; /* White */
     color: #555555;
 }
 
 .bg-4 { 
-    background-color: #4F000B; /* Black Gray */
-    color: #fff;
+    background-color: #CE4257; /* Black Gray */
+    color: #FFE8D1;
 }
 
 .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
+}
+
+.project-image {
+    padding-left:25%;
+    padding-right: 25%;
+}
+
+.logo { 
+    width: 3%;
+}
+
+a {
+    color: #FFE8D1;
+}
+
+a:hover {
+    color: #720026;
 }
 
 .navbar {
