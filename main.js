@@ -1,1 +1,1 @@
-window.open("Portfolio/Main/index.html", "_self");
+window.open("Portfolio2.0/index.html", "_self");
